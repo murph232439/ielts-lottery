@@ -79,7 +79,7 @@ document.getElementById('btn').textContent='🎲 再抽一次';
 },300);
 }
 document.getElementById('tb').onclick=function(e){if(e.target.tagName=='BUTTON')init(e.target.dataset.t)};
-document.getElementById('card').onclick=function(e){var id=e.target&&e.target.id;if(id=='rep'){playAud(CURL)}if(id=='rev'){var q=document.getElementById('qtx');if(q)q.style.display='block';}};
+document.getElementById('card').onclick=function(e){var id=e.target&&e.target.id;if(id=='rep'){playAud(CURL)}if(id=='rev'){var q=document.getElementById('qtx');if(q){var hid=(q.style.display=='none');q.style.display=hid?'block':'none';e.target.textContent=hid?'🙈 隐藏题目':'👀 显示题目';}}};
 document.getElementById('fb').onclick=function(e){if(e.target.tagName=='BUTTON'){FB=e.target.dataset.f;document.getElementById('fb').querySelectorAll('button').forEach(function(b){b.className=(b.dataset.f==FB?'on':'')});init(T)}};
 document.getElementById('btn').onclick=pick;
 init('p1');
