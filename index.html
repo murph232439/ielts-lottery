@@ -69,11 +69,11 @@ document.getElementById('btn').textContent='✦ 抽题中';
 setTimeout(function(){
 var f=QS[Math.floor(Math.random()*QS.length)];
 var html='';
-if(T=='p1'){if(f.a){html='<span class=cat>'+f.cat+'</span><div class=listen>🔊 请听题</div><div class=abtns><button class=ab id=rep>🔁 再听一遍</button><button class=ab id=rev>👀 显示题目</button></div><div class=ti id=qtx style=display:none>'+f.t+'</div><div class=hint id=atip>正在播放…</div>'}else{html='<span class=cat>'+f.cat+'</span><div class=hint>该题暂无音频</div><div class=ti>'+f.t+'</div>'}}
+if(T=='p1'){if(f.a){html='<span class=cat>'+f.cat+'</span><div class=listen>🔊 请听题</div><div class=abtns><button class=ab id=rep>▶️ 播放题目</button><button class=ab id=rev>👀 显示题目</button></div><div class=ti id=qtx style=display:none>'+f.t+'</div><div class=hint id=atip>点「播放题目」听音频</div>'}else{html='<span class=cat>'+f.cat+'</span><div class=hint>该题暂无音频</div><div class=ti>'+f.t+'</div>'}}
 else if(T=='p2'){html='<span class=cat>'+f.category+'</span><span class=t>'+(f.tags||[]).join('/')+'</span><div class=ti>'+f.title+'</div><div class=cu>'+(f.cue||'')+'</div>'}
-else if(T=='p3'){if(f.a){html='<span class=cat>'+f.cat+'</span><span class=t>'+f.t2+'</span><div class=listen>🔊 请听题</div><div class=abtns><button class=ab id=rep>🔁 再听一遍</button><button class=ab id=rev>👀 显示题目</button></div><div class=ti id=qtx style=display:none>'+f.t+'</div><div class=hint id=atip>正在播放…</div>'}else{html='<span class=cat>'+f.cat+'</span><span class=t>'+f.t2+'</span><div class=hint>该题暂无音频</div><div class=ti>'+f.t+'</div>'}}
+else if(T=='p3'){if(f.a){html='<span class=cat>'+f.cat+'</span><span class=t>'+f.t2+'</span><div class=listen>🔊 请听题</div><div class=abtns><button class=ab id=rep>▶️ 播放题目</button><button class=ab id=rev>👀 显示题目</button></div><div class=ti id=qtx style=display:none>'+f.t+'</div><div class=hint id=atip>点「播放题目」听音频</div>'}else{html='<span class=cat>'+f.cat+'</span><span class=t>'+f.t2+'</span><div class=hint>该题暂无音频</div><div class=ti>'+f.t+'</div>'}}
 document.getElementById('card').innerHTML=html;
-if((T=='p1'||T=='p3')&&f.a){playAud(f.a)}
+if((T=='p1'||T=='p3')&&f.a){CURL=f.a;setTip('点「播放题目」听音频')}
 document.getElementById('btn').disabled=false;
 document.getElementById('btn').textContent='🎲 再抽一次';
 },300);
